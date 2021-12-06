@@ -104,22 +104,22 @@ lunch 38
 
 for x in $LINUX_HEADERS; do \
 cp $HEADER_SRC/$x $HEADER_ORI/$x
-$CLEAN_HEADER -u -v -k $HEADER_ORI -d $HEADER_SAN $x
+$CLEAN_HEADER -u -v -k $HEADER_ORI -d $HEADER_SAN $x &>out/cp_headers_4.14.log
 done
 
 for x in $UAPI_HEADERS; do \
 cp $HEADER_SRC/"uapi/"$x $HEADER_ORI/$x
-$CLEAN_HEADER -u -v -k $HEADER_ORI -d $HEADER_SAN $x
+$CLEAN_HEADER -u -v -k $HEADER_ORI -d $HEADER_SAN $x &>>out/cp_headers_4.14.log
 done
 
 for x in $TECHPACK_UAPI_HEADERS; do \
 cp $HEADER_SRC/"../techpack/audio/include/uapi/"$x $HEADER_ORI/$x
-$CLEAN_HEADER -u -v -k $HEADER_ORI -d $HEADER_SAN $x
+$CLEAN_HEADER -u -v -k $HEADER_ORI -d $HEADER_SAN $x &>>out/cp_headers_4.14.log
 done
 
 for x in $TECHPACK_IPC_HEADERS; do \
 cp $HEADER_SRC/"../techpack/audio/include/ipc/"$x $HEADER_ORI/sound/$x
-$CLEAN_HEADER -u -v -k $HEADER_ORI/sound -d $HEADER_SAN/sound $x
+$CLEAN_HEADER -u -v -k $HEADER_ORI/sound -d $HEADER_SAN/sound $x &>>out/cp_headers_4.14.log
 done
 
 echo "Copy complete!"
